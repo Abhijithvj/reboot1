@@ -20,7 +20,11 @@
     body{
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
     background: url(images/inner-bg.jpg);
+=======
+    background: url(image/a.jpg);
+>>>>>>> 2901ae9e7fd70e97133948d66b01c1a349176706
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -53,8 +57,13 @@
     background: rgba(0, 0, 0, 0.7);
     border-radius: 10%;
     color: #fff;
+<<<<<<< HEAD
     top: 55%;
     left: 50%;
+=======
+    top: 50%;
+    left: 86%;
+>>>>>>> 2901ae9e7fd70e97133948d66b01c1a349176706
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;   
@@ -72,7 +81,11 @@
 
     .avatar{
     width: 100px;
+<<<<<<< HEAD
     height: 95px;
+=======
+    height: 100px;
+>>>>>>> 2901ae9e7fd70e97133948d66b01c1a349176706
     border-radius: 50%;
     position: absolute;
     top: -50px;
@@ -104,7 +117,11 @@
     {
     border: none;
     outline: none;
+<<<<<<< HEAD
     height: 30px;
+=======
+    height: 40px;
+>>>>>>> 2901ae9e7fd70e97133948d66b01c1a349176706
     background: #1c8adb;
     color: #fff;
     font-size: 18x;
@@ -131,6 +148,7 @@
 
 </head>
 
+<<<<<<< HEAD
 <body>    
     <div class="login-box"  >   <!-- new modified log in box -->
         <img src="images/logo.jpg" class="avatar">
@@ -149,6 +167,48 @@
             </div>
         </form>
     </div>
+=======
+<body>
+<a href="http://www.jecc.ac.in/">
+<img src="image/head.png" style="width:50%" class="center" 
+alt="Jyothi Official Website">
+</a>
+<div class="nav" style="height: 500px">
+    <ul>
+        <li><a href="../index.php" class="btn btn-primary">
+                <i class="fas fa-arrow-circle-left   faa-passing-reverse animated"style="font-size:20px;"></i>
+                Scanning Page 
+            </a>
+        </li>
+        <li><a href="http://www.jecc.ac.in/documents/MandatoryDisclosure2015.pdf" class="btn btn-danger">
+                <i class="fas fa-cloud-download-alt faa-falling animated" style="font-size:14px;"></i>
+                Mandatory Disclosure
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+
+    
+            <div class="login-box"  >   <!-- new modified log in box -->
+                <img src="image/student.png" class="avatar">
+                <h4>JECC ADMIN PANEL</h4>
+                <form class="form-inline form-signin" align="center" autocomplete="off" action="" method="POST">
+                    <div>
+                    <i class="fas fa-user  faa-ring animated"></i>
+                    <input type="text" class="form-control" name="username" id="username" 
+                            autocomplete="off" autofocus value style="margin-bottom:5px" placeholder="Username"><br>
+                    </div>
+                    <div>
+                    <i class="fas fa-lock faa-flash animated"></i>
+                    <input type="password" class="form-control" name="password" id="password" 
+                            autocomplete="off" autofocus value style="margin-bottom:5px" placeholder="password"><br>
+                    <input class="bt btn-large btn-primary" type="submit" name="save" id="save" value="Sign In">
+                    </div>
+                </form>
+            </div>
+>>>>>>> 2901ae9e7fd70e97133948d66b01c1a349176706
 
 
             
@@ -165,7 +225,11 @@
                     {
                         $_SESSION['admin']="$id";
                         ?>
+<<<<<<< HEAD
                         <script> location.replace("index.html"); </script>
+=======
+                        <script> location.replace("pages/index.php"); </script>
+>>>>>>> 2901ae9e7fd70e97133948d66b01c1a349176706
                         <?php
                     }
                 }
@@ -188,6 +252,33 @@
         } 
             
     ?>
+<<<<<<< HEAD
+=======
+
+
+
+
+    <div class="navbar" style="height:50px;background-color:#212529">
+        <footer id="footer" class="footer-1" style="padding-top:10px;padding-left:50px;">
+            <div class="container">       
+                <div class="row">
+                <!-- Copy Right Logo -->
+
+                    <div class="col" align="center">
+                        <p style="font-size:14px"><font color="white">© Copyright 2018. All Rights Reserved. | Developed &amp; Maintained by the Interns of  
+                    <a href="http://jecc.ac.in/infrastructure/tbi" title="TBI"> tbi@jec </a> CSE - 2017 Admitted Batch.</font></p>
+                    </div><!-- Copy Right Content -->
+                
+                </div><!-- Footer Copyright -->
+            </div>
+                
+        </footer>
+    
+
+    </div>
+
+
+>>>>>>> 2901ae9e7fd70e97133948d66b01c1a349176706
 <script>
 var d = new Date();
 document.getElementById("demo").innerHTML = d;
