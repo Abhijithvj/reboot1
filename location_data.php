@@ -1,6 +1,5 @@
-<?php
-    $conn = mysqli_connect('localhost','root','','land_data');
-    $data = mysqli_query($conn, 'select * from land_details as ld,landrecord_details as lrd'); 
+<?php 
+            $conn = mysqli_connect('localhost','root','','land_data');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,7 +37,9 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script>
+        var sn=0;
+    </script>
 </head>
 <body class="realestate_version">
 
@@ -81,11 +82,13 @@
 	
 	<div class="about-box">
 		<div class="container">
-			
+            <?php 
+            $res = mysqli_query($conn,"SELECT * FROM land_details AS ld,landrecord_details AS lrd") 
+			?>
 			
 			<ul>
                 <li>
-                    <b>Survey Number:</b>
+                    <b>Survey Number: <?php echo $sn;?></b>
 
                 </li>
                 <br>
@@ -182,9 +185,8 @@
                                     google.maps.event.addListener(p1 , 'dblclick', isWithinPoly);
                                     function isWithinPoly(event){
                                         var isWithinPolygon = google.maps.geometry.poly.containsLocation(event.latLng, this);
-                                        console.log(isWithinPolygon);
                                         if (isWithinPolygon == true){
-                                        console.log("Survey Number:1234");
+                                            var sn="120AA/3";
                                         }
                                         console.log("Lat:",event.latLng.lat(),"Lng:",event.latLng.lng())
                                     }
@@ -203,9 +205,8 @@
                                     google.maps.event.addListener(d1 , 'dblclick', isWithinPoly);
                                     function isWithinPoly(event){
                                         var isWithinPolygon = google.maps.geometry.poly.containsLocation(event.latLng, this);
-                                        console.log(isWithinPolygon);
                                         if (isWithinPolygon == true){
-                                        console.log("Survey Number:12345");
+                                            var sn="130AB/2";
                                         }
                                         console.log("Lat:",event.latLng.lat(),"Lng:",event.latLng.lng())
                                     }
