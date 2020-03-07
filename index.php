@@ -155,8 +155,7 @@
                     </script>
                     <div class="contact_form">
                         <div id="message"></div>
-                        <form id="contactform" class="row" action="contact.php" name="contactform" method="post">
-                            
+                        <form action="/agrosat_new/location_data.php" href="" id="contactform" class="row"  name="contactform" method="POST">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
                                 <label for="cars">Select a District:</label>
                                 <select name="select_place" id="select_place" class="selectpicker form-control" data-style="btn-white">
@@ -222,18 +221,21 @@
                                     <option value="Palakkad">Pudusherry West</option> 
                                     <option value="Palakkad">Pudusherry Central</option>
                                     <option value="Palakkad">Kodumbu</option> 
-                                    <option value="Palakkad">polpully</option> 
+                                    <option value="Palakkad">POLPULLY</option> 
                                  </select>  
                             </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                                <label for="cars">Enter Survey No:</label>
+                                <input typre="text" name="survey_no" id="survey_no" class="form-control" data-style="btn-white">
+                            </div>   
                            
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">View</button>
+                                <button type="submit" value="Submit" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Submit</button>
                                                              
-                                </div>
+                            </div>
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <button type="reset" value="reset" id="reset" class="btn btn-light btn-radius btn-brd grd1 btn-block">Reset</button>
                             </div>
-                        </fieldset>
                         </form>
                     </div>
                 </div><!-- end col -->
