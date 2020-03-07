@@ -165,7 +165,7 @@
                     {
                         $_SESSION['admin']="$id";
                         ?>
-                        <script> location.replace("index.html"); </script>
+                        <script> location.replace("index.php"); </script>
                         <?php
                     }
                 }
