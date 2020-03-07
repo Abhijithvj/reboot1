@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html>
 <head >
@@ -163,10 +160,17 @@
                 { 
                     if($id =='admin'&& $pass =='admin')
                     {
+                        session_start();
                         $_SESSION['admin']="$id";
+                        header('Location:index.php');
+                        if(isset($_SESSION['admin'])){
                         ?>
+<<<<<<< HEAD
                         <script> location.replace("index.php"); </script>
+=======
+>>>>>>> 725e5a4195b601d59986b6ff446976bfacd2a4da
                         <?php
+                        }
                     }
                 }
                 else

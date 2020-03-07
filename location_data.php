@@ -1,5 +1,9 @@
 <?php 
+            session_start();
+            if(isset($_SESSION['admin'])){
             $conn = mysqli_connect('localhost','root','','land_data');
+            $sn = $_POST["survey_no"];
+            echo $sn;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,8 +87,12 @@
 	<div class="about-box">
 		<div class="container">
             <?php 
-            $res = mysqli_query($conn,"SELECT * FROM land_details AS ld,landrecord_details AS lrd") 
-			?>
+            $res1 = mysqli_query($conn,"SELECT * FROM land_details AS ld where ld.survey_no = '$sn'");
+            $res2 = mysqli_query($conn,"SELECT * FROM landrecord_details AS lrd where lrd.survey_no = '$sn'");
+            $row1 = mysqli_fetch_assoc($res1);
+            $row2 = mysqli_fetch_assoc($res2);
+            if (mysqli_num_rows($res1) > 0) {
+            ?>
 			
 			<ul>
                 <li>
@@ -93,7 +101,7 @@
                 </li>
                 <br>
                 <li>
-                    <b>Owner's Name:</b>
+                    <b>Owner's Name:<?php echo $row1['lh_name'];?></b>
                 </li>
                 <br>
                 <li>
@@ -218,46 +226,46 @@
             <div>
                  <ul>
                     <li>
-                        <b>District:</b>
+                        <b>District:<?php echo $row2['district']; ?></b>
     
                     </li><br>
                     <li>
-                        <b>Thaluk:</b>
+                        <b>Taluk:<?php echo $row2['taluk']; ?></b>
     
                     </li><br>
                     <li>
-                        <b>Village:</b>
+                        <b>Village:<?php echo $row2['village']; ?></b>
     
                     </li><br>
                     <li>
-                        <b>Block Number:</b>
+                        <b>Block Number:<?php echo $row2['blockno']; ?></b>
     
                     </li><br>
                     <li>
-                        <b>Land Type:</b>
+                        <b>Land Type:<?php echo $row2['land_type']; ?></b>
     
                     </li><br>
                     <li>
-                        <b>Servey Number:</b>
+                        <b>Area(Hectare):</b>
     
                     </li><br>
                     <li>
-                        <b>Area (Hectare):</b>
+                        <b>Survey Subdivision number:<?php echo $row2['survey_subdiv_no']; ?></b>
     
                     </li><br>
                     <li>
-                        <b>Survey Subdivision number:</b>
+                        <b>Re-Survey Number:<?php echo $row2['resurvey_no']; ?></b>
     
                     </li><br>
                     <li>
-                        <b>Reserve Number:</b>
-    
-                    </li><br>
-                    <li>
-                        <b>Reservey subdivision Number:</b>
+                        <b>Re-Survey subdivision Number:<?php echo $row2['resurvey_subdiv_no']; ?></b>
     
                     </li><br>
                  </ul>
+                <?php
+            }
+            ?>
+
              </div>			
 		</div>
 	</div>
@@ -275,3 +283,6 @@
 
 </body>
 </html>
+<?php
+            }
+?>
