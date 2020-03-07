@@ -1,10 +1,6 @@
 <?php
     $conn = mysqli_connect('localhost','root','','land_data');
-    $data = mysqli_query($conn, 'select * from land_details as ld,landrecord_details as lrd');
-    $ldata = mysqli_num_rows($data);
-    $fetch = mysqli_fetch_assoc($ldata);
-    $sn = $fetch['survey_no'];
-    
+    $data = mysqli_query($conn, 'select * from land_details as ld,landrecord_details as lrd'); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -89,7 +85,7 @@
 			
 			<ul>
                 <li>
-                    <b>Survey Number:<?php echo $sn;?></b>
+                    <b>Survey Number:</b>
 
                 </li>
                 <br>
@@ -103,9 +99,122 @@
               </ul>  
 				
             <br>
+            <div id="map"></div>
+                                        <script>
+                                    function initMap() {
+                                    var map = new google.maps.Map(document.getElementById('map'), {
+                                        zoom: 19,
+                                        mapTypeId: 'satellite',
+                                        disableDoubleClickZoom: true,
+                                        center: {lat: 10.75944, lng: 76.29348},
+                                    });
 
-             </div>
-             <div>
+                                    var p1 = [
+                                                {lat: 10.7588912, lng: 76.2926389 },
+                                                {lat: 10.7588882, lng: 76.2926567 },
+                                                {lat: 10.7588807, lng: 76.2927435 },
+                                                {lat: 10.7588698, lng: 76.2928284 },
+                                                {lat: 10.7588649, lng: 76.2928534 },
+                                                {lat: 10.7588491, lng: 76.2929768 },
+                                                {lat: 10.7588652, lng: 76.2929931 },
+                                                {lat:10.758935 , lng:  76.2930226},
+                                                {lat: 10.7589594, lng: 76.2930268 },
+                                                {lat: 10.7589824, lng:  76.293048 },
+                                                {lat: 10.7589982, lng: 76.2930735 },
+                                                {lat: 10.7590252, lng: 76.2930724 },
+                                                {lat: 10.759066 , lng:   76.293066},
+                                                {lat: 10.7591254, lng:  76.293059 },
+                                                {lat: 10.7591932, lng: 76.2930521 },
+                                                {lat: 10.7592011, lng: 76.2929877 },
+                                                {lat: 10.7592018, lng: 76.2929383 },
+                                                {lat: 10.759209 , lng:  76.2928992},
+                                                {lat: 10.7591932, lng: 76.2928187 },
+                                                {lat: 10.7591853, lng: 76.2927597 },
+                                                {lat: 10.7591623, lng: 76.2927425 },
+                                                {lat: 10.759128 , lng:  76.2927398},
+                                                {lat: 10.7590911, lng: 76.2927318 },
+                                                {lat: 10.7590621, lng: 76.2927184 },
+                                                {lat: 10.7590147, lng: 76.2926755 },
+                                                {lat: 10.7589963, lng: 76.2926594 },
+                                                {lat: 10.7589488, lng: 76.2926406 },
+                                                {lat: 10.7588912, lng: 76.2926389 }
+
+                                    ];
+                                    var d1 = [
+                                                        {lng: 76.2939174,lat: 10.7597308},
+                                                        {lng: 76.2939388,lat: 10.7597111},
+                                                        {lng: 76.2940005,lat: 10.759719},
+                                                        {lng: 76.2940341,lat: 10.7597308},
+                                                        {lng: 76.2940582,lat: 10.7597269},
+                                                        {lng: 76.2940931,lat: 10.7597269},
+                                                        {lng: 76.2941427,lat: 10.7597348},
+                                                        {lng: 76.2941494,lat: 10.7597625},
+                                                        {lng: 76.2941682,lat: 10.7597835},
+                                                        {lng: 76.2941843,lat: 10.7598231},
+                                                        {lng: 76.2941896,lat: 10.759856},
+                                                        {lng: 76.2941749,lat: 10.7598863},
+                                                        {lng: 76.2941615,lat: 10.7599034},
+                                                        {lng: 76.2941226,lat: 10.7599206},
+                                                        {lng: 76.2940837,lat: 10.7599166},
+                                                        {lng: 76.2940528,lat: 10.7599166},
+                                                        {lng: 76.2940099,lat: 10.7599232},
+                                                        {lng: 76.2939858,lat: 10.7599364},
+                                                        {lng: 76.2939496,lat: 10.7599482},
+                                                    {lng:  76.293916,lat: 10.7599509},
+                                                        {lng: 76.2938678,lat: 10.7599337},
+                                                    {lng:  76.293845,lat: 10.7599008},
+                                                        {lng: 76.2938463,lat: 10.7598626},
+                                                    {lng:  76.293845,lat: 10.7598086},
+                                                    {lng:  76.293849,lat: 10.7597783},
+                                                    {lng:  76.293861,lat: 10.7597519},
+                                                        {lng: 76.2938879,lat: 10.7597414},
+                                                        {lng: 76.2939174,lat: 10.7597308}
+                                    ];
+                                            var p1 = new google.maps.Polygon({
+                                                    paths: p1,
+                                                    // clickable:false,
+                                                });
+                                                p1.setMap(map);
+                                    google.maps.event.addListener(map, 'click', function (event) {
+                                            //alert the index of the polygon
+                                            console.log("Lat:",event.latLng.lat(),"Lng:",event.latLng.lng());
+                                        });
+                                    google.maps.event.addListener(p1 , 'dblclick', isWithinPoly);
+                                    function isWithinPoly(event){
+                                        var isWithinPolygon = google.maps.geometry.poly.containsLocation(event.latLng, this);
+                                        console.log(isWithinPolygon);
+                                        if (isWithinPolygon == true){
+                                        console.log("Survey Number:1234");
+                                        }
+                                        console.log("Lat:",event.latLng.lat(),"Lng:",event.latLng.lng())
+                                    }
+
+
+
+                                            var d1 = new google.maps.Polygon({
+                                            paths: d1,
+                                            // clickable:false,
+                                            });
+                                            d1.setMap(map);        
+                                    google.maps.event.addListener(map, 'click', function (event) {
+                                            //alert the index of the polygon
+                                            console.log("Lat:",event.latLng.lat(),"Lng:",event.latLng.lng());
+                                        });
+                                    google.maps.event.addListener(d1 , 'dblclick', isWithinPoly);
+                                    function isWithinPoly(event){
+                                        var isWithinPolygon = google.maps.geometry.poly.containsLocation(event.latLng, this);
+                                        console.log(isWithinPolygon);
+                                        if (isWithinPolygon == true){
+                                        console.log("Survey Number:12345");
+                                        }
+                                        console.log("Lat:",event.latLng.lat(),"Lng:",event.latLng.lng())
+                                    }
+                                    }
+                                        </script>
+                                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF44D1DKov89K0L9g-n7IBE8wliJwE4To&callback=initMap"
+                                        async defer></script>
+                                </div>
+            <div>
                  <ul>
                     <li>
                         <b>District:</b>
