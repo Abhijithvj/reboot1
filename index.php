@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    if(isset($_SESSION['admin'])){
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>    <!-- Basic -->
@@ -253,3 +257,9 @@
 
 </body>
 </html> 
+<?php
+    }
+    else{
+        header('Location:login.php');
+    }
+?>
