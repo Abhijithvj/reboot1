@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>    <!-- Basic -->
 
@@ -95,7 +95,8 @@
 <body class="realestate_version">
 
 
-<div id="eng">    <!-- LOADER -->
+
+    <!-- LOADER -->
     <div id="preloader">
         <span class="loader"><span class="loader-inner"></span></span>
     </div><!-- end loader -->
@@ -112,8 +113,10 @@
                      
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="complaint_inbox.html">Complaints</a></li>
+                        <li><a href="complaint_inbox.html">Complaint</a></li>
+                        <li><a href="notification.html">Notifications </a></li> 
                         <li><a href="logout.php">Signout </a></li>                
+               
                     </ul>  
                 </div>
             </div>
@@ -137,30 +140,19 @@
             
             <div class="row">
                 <div class="col-md-6">
-                    click to change languages:
-                    
-  <label class="switch">
-    <input type="checkbox" id="togBtn" value="false" name="disableYXLogo">
-    <div class="slider round"></div>
-    </label>
-
+                    click to change languages:<a href="">
+                    <label class="switch">
+                        <input type="checkbox" onclick="myFunction()">
+                        <span class="slider round"></span>
+                    </label></a>  
                     <br>
                     <script>                   
-                        var switchStatus = false;
-$("#togBtn").on('change', function() {
-    if ($(this).is(':checked')) {
-        switchStatus = $(this).is(':checked');
-        alert(switchStatus);// To verify
-    }
-    else {
-       switchStatus = $(this).is(':checked');
-       alert(switchStatus);// To verify
-    }
-});         
+                        function myFunction()
+                        {
+                            alert("Now in Malayalam");
+                        }             
                         
                     </script>
-
-
                     <div class="contact_form">
                         <div id="message"></div>
                         <form id="contactform" class="row" action="contact.php" name="contactform" method="post">
@@ -230,9 +222,10 @@ $("#togBtn").on('change', function() {
                                     <option value="Palakkad">Pudusherry West</option> 
                                     <option value="Palakkad">Pudusherry Central</option>
                                     <option value="Palakkad">Kodumbu</option> 
-                                    <option value="Palakkad">polpully</option> \
-                                    
+                                    <option value="Palakkad">polpully</option> 
                                  </select>  
+                            </div>
+                           
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                 <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">View</button>
                                                              
@@ -255,164 +248,7 @@ $("#togBtn").on('change', function() {
         </div><!-- end container -->
     </div><!-- end section -->
 
-</div>
 
-
-<div id="mal">
-
-    <div id="preloader">
-        <span class="loader"><span class="loader-inner"></span></span>
-    </div><!-- end loader -->
-    <!-- END LOADER -->
-
-    <header class="header header_style_01">
-        <nav class="megamenu navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    
-                    <a class="navbar-brand" ><img src="images/logo.jpg" height="120%" alt="logo"></a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                     
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="complaint_inbox.html">പരാതിപെട്ടി </a></li>
-                        <li><a href="logout.php">അറിയിപ്പ് </a></li>  
-                        <li><a href="logout.php">ലോഗ് ഔട്ട്t </a></li>                
-             
-                    </ul>  
-                </div>
-            </div>
-        </nav>
-    </header>
-	
-	<div class="all-title-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<h2>നിങ്ങളുടെ ഭൂമി ഞങ്ങളുടെ ദൗത്യം ....</h2>
-				</div>
-			</div>
-		</div>
-    </div>
-    
-
-    
-	<div id="support" class="section wb">
-        <div class="container">
-            
-            <div class="row">
-                <div class="col-md-6">
-                    ഭാഷ മാറ്റാൻ ക്ലിക്കുചെയ്യുക:
-                    <label class="switch">
-                        <input type="checkbox" onclick="myFunction()">
-                        <span class="slider round"></span>
-                    </label>  
-                    <br>
-                    <script>                   
-                        function myFunction()
-                        {
-                            alert("Now in Malayalam");
-
-                        }             
-                        
-                    </script>
-                    <div class="contact_form">
-                        <div id="message"></div>
-                        <form id="contactform" class="row" action="contact.php" name="contactform" method="post">
-                            
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                                <label for="cars">ജില്ല തിരഞ്ഞെടുക്കുക:</label>
-                                <select name="select_place" id="select_place" class="selectpicker form-control" data-style="btn-white">
-                                    <option ></option>
-                                    <option value="Thiruvananthapuram">തിരുവനന്തപുരം</option>
-                                    <option value="Kollam">കൊല്ലം</option>
-                                    <option value="Alappuzha">അലപ്പുഴ</option>
-                                    <option value="Pathanamthitta">പത്തനംതിട്ട</option>
-                                    <option value="Kottayam">കോട്ടയം</option>
-                                    <option value="Idukki">ഇടുക്കി</option>
-                                    <option value="Ernakulam">എറണാകുളം</option>
-                                    <option value="Thrissur">തൃശ്ശൂർ</option>
-                                    <option value="Palakkad">പാലക്കാട്</option>
-                                    <option value="Malappuram">മലപ്പുറം</option>
-                                    <option value="Kozhikode">കോഴിക്കോട്</option>
-                                    <option value="Wayanadu">വയനാട്</option>
-                                    <option value="Kannur">കണ്ണൂർ</option>
-                                    <option value="Kasaragod">കാസർഗോഡ്</option>
-
-                                </select>    
-                            </div>                      
-                            
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <label>താലൂക്ക് തിരഞ്ഞെടുക്കുക</label>
-                                <select name="select_Taluk_name" id="select_taluk" class="selectpicker form-control" data-style="btn-white">
-                                 <option ></option>                                   
-                                    <option value= "Palakkad">പാലക്കാട്</option>
-                                    <option value="chittur">ചിറ്റൂർ</option>
-                                    <option value="Alathur">അലത്തൂർ</option>
-                                    <option value="ottapalam">ഒറ്റപ്പാലം</option>
-                                    <option value="Mannarkad">മന്നാർക്കാട്</option>
-                                    <option value="Pattambi">പട്ടാംബി</option>
-                                    
-                                 </select>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                                <label>വില്ലേജ് ഓഫീസ് തിരഞ്ഞെടുക്കുക:</label>
-                                <select name="VillagOffice" id="select_taluk" class="selectpicker form-control" data-style="btn-white">
-                                    <option value="Palakkad">പാലക്കാട്1</option>
-                                    <option value="Palakkad">പാലക്കാട്2</option>
-                                    <option value="Palakkad">പാലക്കാട്3</option> 
-                                    <option value="Palakkad">അകതേതര</option>
-                                    <option value="Palakkad">മലമ്പുഴ1</option>
-                                    <option value="Palakkad"> മലമ്പുഴ2</option> 
-                                    <option value="Palakkad">മാരുത്തരോഡ്</option> 
-                                    <option value="Palakkad">പിരയേരി</option>
-                                    <option value="Palakkad">കന്നടി 1</option>
-                                    <option value="Palakkad">കന്നടി2</option> 
-                                    <option value="Palakkad">യക്കര</option>
-                                    <option value="Palakkad">പാർലി1</option>
-                                    <option value="Palakkad">പാർലി2</option>
-                                    <option value="Palakkad">മങ്കര</option> 
-                                    <option value="Palakkad">കേരളശ്ശേരി</option> 
-                                    <option value="Palakkad">കോങ്കാട് 1</option>
-                                    <option value="Palakkad">കോങ്കാട് 2</option>
-                                    <option value="Palakkad">മുണ്ടൂർ 1</option> 
-                                    <option value="Palakkad">മുണ്ടൂർ 2</option> 
-                                    <option value="Palakkad">പുതുപാരിയറാം 1</option> 
-                                    <option value="Palakkad">പുതുപാരിയറാം 2</option>
-                                    <option value="Palakkad">പുതുഷേരി ഈസ്റ്റ്</option> 
-                                    <option value="Palakkad">പുതുഷെരി വെസ്റ്റ്t</option> 
-                                    <option value="Palakkad">പുതുച്ചേരി സെൻട്രൽ</option>
-                                    <option value="Palakkad">കൊടുമ്പു</option> 
-                                    <option value="Palakkad">പൊൽപ്പുള്ളി</option>
-
-                                 </select>  
-                            </div>
-                           
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">കാണുക</button>
-                                                             
-                                </div>
-                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                <button type="reset" value="reset" id="reset" class="btn btn-light btn-radius btn-brd grd1 btn-block">പുന .സജ്ജമാക്കുക</button>
-                            </div>
-                        </fieldset>
-                        </form>
-                    </div>
-                </div><!-- end col -->
-				<div class="col-md-6">
-					<div class="right-box-contact">
-                        
-                        <div id="map"></div> 
-
-					</div>
-				</div><!-- end col -->
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
-
-
-</div>
     <!-- ALL JS FILES -->
     <script src="js/all.js"></script>
     <!-- ALL PLUGINS -->
