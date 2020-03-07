@@ -131,7 +131,7 @@
 <body>    
     <div class="login-box"  >   <!-- new modified log in box -->
         <img src="images/logo.jpg" class="avatar">
-        <h4>Admin Login</h4>
+        <h4>Grievance Portal Login</h4>
         <form class="form-inline form-signin" align="center" autocomplete="off" action="" method="POST">
             <div>
                 <i class="fas fa-user  faa-ring animated"></i>
@@ -162,13 +162,10 @@
                     {
                         session_start();
                         $_SESSION['admin']="$id";
-                        header('Location:index.php');
+                        header('Location:grievance.php');
                         if(isset($_SESSION['admin'])){
                         ?>
-<<<<<<< HEAD
                         <script> location.replace("index.php"); </script>
-=======
->>>>>>> 725e5a4195b601d59986b6ff446976bfacd2a4da
                         <?php
                         }
                     }

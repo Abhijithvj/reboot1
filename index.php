@@ -91,8 +91,10 @@
    
     
 
-    <script src="https://kit.fontawesome.com/1718e394d4.js" crossorigin="anonymous"></script>
-    <script src="js/modernizer.js"></script>
+    <script src="https://kit.fontawesome.com/1718e394d4.js" crossorigin="anonymous">
+</script>
+    <script src="js/modernizer.js"> 
+</script>
 
    
 </head>
@@ -137,7 +139,10 @@
 		</div>
     </div>
     
+<script>
+    selectElement.options[0].selected="selected";
 
+</script>
     
 	<div id="support" class="section wb">
         <div class="container">
@@ -154,11 +159,11 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
                                 <label for="cars">Select a District:</label>
                                 <select name="select_place" id="select_place" class="selectpicker form-control" data-style="btn-white">
-                                    <option ></option>
+                                    <option selected></option>
                                     <option value="Thiruvananthapuram">Thiruvananthapuram</option>
                                     <option value="Kollam">Kollam</option>
                                     <option value="Alappuzha">Alappuzha</option>
-                                    <option value="Pathanamthitta">Pathanamthitta</option>
+                                    <option  value="Pathanamthitta" >Pathanamthitta</option>
                                     <option value="Kottayam">Kottayam</option>
                                     <option value="Idukki">Idukki</option>
                                     <option value="Ernakulam">Ernakulam</option>
@@ -176,7 +181,7 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <label>Select a Thaluk:</label>
                                 <select name="select_Taluk_name" id="select_taluk" class="selectpicker form-control" data-style="btn-white">
-                                 <option ></option>                                   
+                                 <option selected></option>                                   
                                     <option value= "Palakkad">Palakkad</option>
                                     <option value="chittur">chittur</option>
                                     <option value="Alathur">Alathur</option>
@@ -189,6 +194,8 @@
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <label>Select a VillageOffice:</label>
                                 <select name="VillagOffice" id="select_taluk" class="selectpicker form-control" data-style="btn-white">
+                                    <option selected ></option>
+                                    
                                     <option value="Palakkad">Palakkad1</option>
                                     <option value="Palakkad">Palakkad2</option>
                                     <option value="Palakkad">Palakkad3</option> 
