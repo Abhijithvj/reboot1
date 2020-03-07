@@ -143,7 +143,7 @@
                 <input type="password" class="form-control" name="password" id="password" 
                 autocomplete="off" autofocus value style="margin-bottom:5px" placeholder="password"><br>
                 <input class="bt btn-large btn-primary" type="submit" name="save" id="save" value="Sign In">
-            </div>
+           </div>
         </form>
     </div>
 
@@ -165,7 +165,7 @@
                         header('Location:grievance.php');
                         if(isset($_SESSION['admin'])){
                         ?>
-                        <script> location.replace("index.php"); </script>
+                        <script> location.replace("grievance.php"); </script>
                         <?php
                         }
                     }
