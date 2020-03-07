@@ -120,7 +120,7 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="index.php">Home</a></li>
                         <li><a href="complaint_inbox.html">Complaints</a></li>
-                        <li><a href="notification.html">Notifications </a></li> 
+                        <li><a href="notification.html">Notifications </a></li>                        
                         <li><a href="logout.php">Signout </a></li>                
                
                     </ul>  

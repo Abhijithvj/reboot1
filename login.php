@@ -143,6 +143,7 @@
                 <input type="password" class="form-control" name="password" id="password" 
                 autocomplete="off" autofocus value style="margin-bottom:5px" placeholder="password"><br>
                 <input class="bt btn-large btn-primary" type="submit" name="save" id="save" value="Sign In">
+                
             </div>
         </form>
     </div>
@@ -165,10 +166,7 @@
                         header('Location:index.php');
                         if(isset($_SESSION['admin'])){
                         ?>
-<<<<<<< HEAD
                         <script> location.replace("index.php"); </script>
-=======
->>>>>>> 725e5a4195b601d59986b6ff446976bfacd2a4da
                         <?php
                         }
                     }
