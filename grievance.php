@@ -71,8 +71,50 @@
 				<div class="col-md-6">
                     <div class="post-media wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
                         <!-- complaint image below. \./ ._. -->
-                        <img src="images/1.jpg" alt="Complaint image" class="img-responsive">                        
-                    </div><!-- end media -->
+                        <video id="video" width="540" height="480" autoplay></video>
+                            <!-- <button id="snap">Snap Photo</button> -->
+                            <a id="download" download="image.png"><button type="button" onClick="download()">Download</button></a>
+                            <canvas id="canvas" width="640" height="480"></canvas>
+                            <script>
+                                var video = document.getElementById('video');
+
+                            // Get access to the camera!
+                                if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                                    // Not adding `{ audio: true }` since we only want video now
+                                    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+                                        //video.src = window.URL.createObjectURL(stream);
+                                        video.srcObject = stream;
+                                        video.play();
+                                    });
+                                }  
+                                var canvas = document.getElementById('canvas');
+                                var context = canvas.getContext('2d');
+                                var video = document.getElementById('video');
+
+                                // Trigger photo take
+                                document.getElementById("snap").addEventListener("click", function() {
+                                    context.drawImage(video, 0, 0, 640, 480);
+
+                                });
+
+                                function convertCanvasToImage(canvas) {
+                                var image = new Image();
+                                var imagesrc = canvas.toDataURL("image/png");
+                                move_uploaded_file($image,'upload/'.$image);
+                                console.log($imagesrc);
+                                return image;
+                                }
+
+                                function download(){
+                                    var download = document.getElementById("download");
+                                    var image = document.getElementById("canvas").toDataURL("image/png")
+                                                .replace("image/png", "image/octet-stream");
+                                                download.setAttribute("href", image);
+
+                                }
+                            </script>
+
+                    </div>
                 </div>
 				<div class="col-md-6">
 					<div class="message-box right-ab">
@@ -83,7 +125,7 @@
 <br>
                   
                             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <button type="submit" value="SEND" id="submit" class="btn btn-light btn-radius btn-brd grd1 btn-block">Sent</button>                                                         
+                            <button type="submit" value="SEND" id="submit" onclick="location.reload()" href="complaint_inbox.html" class="btn btn-light btn-radius btn-brd grd1 btn-block">Sent</button>                                                         
                             </div>
                             
                         </div>
