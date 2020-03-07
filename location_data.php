@@ -246,7 +246,7 @@
     
                     </li><br>
                     <li>
-                        <b>Area(Hectare):</b>
+                        <b>Area(Hectare):<?php echo "0.5"; ?></b>
     
                     </li><br>
                     <li>
@@ -255,6 +255,10 @@
                     </li><br>
                     <li>
                         <b>Re-Survey Number:<?php echo $row2['resurvey_no']; ?></b>
+    
+                    </li><br>
+                    <li>
+                        <b>Fare Value:<?php echo "20,000/cent"; ?></b>
     
                     </li><br>
                     <li>
