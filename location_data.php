@@ -1,3 +1,11 @@
+<?php
+    $conn = mysqli_connect('localhost','root','','land_data');
+    $data = mysqli_query($conn, 'select * from land_details as ld,landrecord_details as lrd');
+    $ldata = mysqli_num_rows($data);
+    $fetch = mysqli_fetch_assoc($ldata);
+    $sn = $fetch['survey_no'];
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,7 +89,7 @@
 			
 			<ul>
                 <li>
-                    <b>Survey Number:</b>
+                    <b>Survey Number:<?php echo $sn;?></b>
 
                 </li>
                 <br>
@@ -95,9 +103,7 @@
               </ul>  
 				
             <br>
-            <div class="section-title row text-center">
-               
-                    <div id="map"></div> 
+
              </div>
              <div>
                  <ul>
@@ -154,7 +160,6 @@
     <script src="js/all.js"></script>
     <!-- ALL PLUGINS -->
     <script src="js/custom.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
    <!-- MAP & CONTACT -->
     <script src="js/map.js"></script>
 
