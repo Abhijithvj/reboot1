@@ -108,7 +108,7 @@
     </div><!-- end loader -->
     <!-- END LOADER -->
 
-    <header class="header header_style_01">
+    <header class="header header_style_01" style="background-color:#F5F2D0">
         <nav class="megamenu navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -153,12 +153,12 @@
             <a href="./malayalamindex.html"><i class="fas fa-toggle-off fa-2x"></i></a>
 
 
-                    <div class="contact_form">
+                    <div class="contact_form" style="background-color:#F5F2D0">
                         <div id="message"></div>
                         <form action="/agrosat_new/location_data.php" href="" id="contactform" class="row"  name="contactform" method="POST">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
                                 <label for="cars">Select a District:</label>
-                                <select name="select_place" id="select_place" class="selectpicker form-control" data-style="btn-white">
+                                <select name="select_place" id="select_place" class="selectpicker form-control" autofocus data-style="btn-white">
                                     <option selected></option>
                                     <option value="Thiruvananthapuram">Thiruvananthapuram</option>
                                     <option value="Kollam">Kollam</option>
@@ -180,7 +180,7 @@
                             
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <label>Select a Thaluk:</label>
-                                <select name="select_Taluk_name" id="select_taluk" class="selectpicker form-control" data-style="btn-white">
+                                <select name="select_Taluk_name" id="select_taluk" class="selectpicker form-control" autofocus data-style="btn-white">
                                  <option selected></option>                                   
                                     <option value= "Palakkad">Palakkad</option>
                                     <option value="chittur">chittur</option>
@@ -193,7 +193,7 @@
                             </div>
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <label>Select a VillageOffice:</label>
-                                <select name="VillagOffice" id="select_taluk" class="selectpicker form-control" data-style="btn-white">
+                                <select name="VillagOffice" id="select_taluk" class="selectpicker form-control" autofocus data-style="btn-white">
                                     <option selected ></option>
                                     
                                     <option value="Palakkad">Palakkad1</option>

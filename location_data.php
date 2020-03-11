@@ -2,7 +2,7 @@
             session_start();
             if(isset($_SESSION['admin'])){
             $conn = mysqli_connect('localhost','root','','land_data');
-            $sn = $_POST["survey_no"];
+            $sn = '120AA/3';
             echo $sn;
 ?>
 <!DOCTYPE html>
@@ -105,7 +105,7 @@
                 </li>
                 <br>
                 <li>
-                    <b>Location:</b>
+                    <b>Location:<?php echo "Latitude:".$row1['latitude_start']."  Longitude:".$row1['longitude_start']; ?></b>
                 </li>
               </ul>  
 				
@@ -222,9 +222,8 @@
                                         </script>
                                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF44D1DKov89K0L9g-n7IBE8wliJwE4To&callback=initMap"
                                         async defer></script>
-                                </div>
-            <div>
                  <ul>
+                    <br>
                     <li>
                         <b>District:<?php echo $row2['district']; ?></b>
     
@@ -247,6 +246,10 @@
                     </li><br>
                     <li>
                         <b>Area(Hectare):<?php echo "0.5"; ?></b>
+    
+                    </li><br>
+                    <li>
+                        <b>Change Happened:<?php echo "No changes occured to land type"; ?></b>
     
                     </li><br>
                     <li>
